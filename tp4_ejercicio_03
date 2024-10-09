@@ -1,0 +1,19 @@
+# lucia velloso #
+# TP4_Ejercicio_03.py
+
+import csv
+
+# Inicializamos una variable para llevar la cuenta del stock total
+stock_total_tornillos = 0
+
+# Abrimos el archivo stock.csv en modo lectura
+with open('stock.csv', mode='r', newline='') as archivo:
+    lector_csv = csv.DictReader(archivo)
+    
+    # Recorremos cada fila del archivo
+    for fila in lector_csv:
+        # Accedemos a la columna "tornillos" y sumamos su valor al total
+        stock_total_tornillos += int(fila['tornillos'])
+
+# Mostramos el resultado final
+print(f"El stock total de tornillos es: {stock_total_tornillos}")
